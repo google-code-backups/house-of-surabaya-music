@@ -1,0 +1,76 @@
+<html>
+<title>HOS</title>
+<head>
+	<link type"text/css" rel="stylesheet" href="css/bootstrap.css"/>
+	
+</head>
+<body>
+
+<style>
+body
+{
+background-image:url('music.jpg');
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-position:bottom right;
+} 
+
+</style>
+
+
+    <div class="hero-unit">
+    <h1 style="color:white">HOS<img align="right" src="linux.jpg" alt="Smiley face" width="200" height="200"></h1> 
+    <p style="color:yellow">
+	House Of Surabaya Music
+	</p>
+	</div>
+	
+	 <div class="navbar">
+	<div class="navbar-inner">
+	<a class="brand">HOS</a>
+	<ul class="nav">
+	<li><a href="home.php">Home</a></li>
+    <li><a href="studiomusik.php">Studio Musik</a></li>
+	<li><a href="studiorecording.php">Studio Recording</a></li>
+	<li><a href="tokoalatmusik.php">Toko Alat Musik</a></li>
+	<li><a href="event.html">Upload Poster Event</a></li>
+    </ul>
+	</div>
+	</div>
+	
+<form class="well span5" method="post" action="register.php" enctype="multipart/form-data">
+		
+		<label><b>Nama Fasilitas</b></label>
+		<input type="text" class="span3" placeholder="Type Nama Fasilitas here..." name="nama_fasilitas" required="required"/><br/>
+		
+		<label><b>Nama Pemilik</b></label>
+		<input type="text" class="span3" placeholder="Type Nama Pemilik here..." name="nama_pemilik" required="required"/><br/>
+		
+		<label><b>Nomor KTP</b></label>
+		<input type="text" class="span3" placeholder="Type Nomor KTP here..." name="no_KTP" required="required"/><br/>
+	
+				
+		<label><b>Password</b></label>
+		<input type="password" class="span3" placeholder="Type Password here..." name="password" required="required"/><br/>
+		
+		<label><b>Tipe Fasilitas</b></label>
+		<select name="tipef">
+			<option value="Studio Musik">Studio Musik</option>
+			<option value="Studio Recording">Studio Recording</option>
+			<option value="Toko Alat Musik">Toko Alat Musik</option>
+			</select>
+		
+		<label><b>Upload Surat Ijin Pendirian Usaha(.jpg/.png)</b></label>
+		<input type="file" name="picsipu" id="picsipu" accept="image/*">
+		
+		<label><b>Upload Foto Fasilitas(.jpg/.png)</b></label>
+		<input type="file" name="picfoto" accept="image/*">
+	
+		<br/>
+		<button class="btn btn-primary" type="submit">Register</button>
+		<button class="btn" type="reset">Reset</button>
+	</form>
+	
+<script> script src="js/bootstrap.js"></script>
+</body>
+</html>
