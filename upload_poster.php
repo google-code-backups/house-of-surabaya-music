@@ -6,22 +6,26 @@ mysql_select_db ("hos");
 	@$deskripsi=$_POST ['deskripsi'];
 	@$tanggal=$_POST ['tanggal'];
 	@$tempat=$_POST ['tempat'];
-	@$catatan=$_POST ['catatan'];
 	@$PosterName=null;
-   
-   @$PosterName = $_FILES['picfotoe']['name']; //get the file name
-	  @$PosterSize = $_FILES['picfotoe']['size']; //get the size
-	  @$PosterError = $_FILES['picfotoe']['error']; //get the error when upload
-			if($PosterSize > 0 || $PosterError == 0){ //check if the file is corrupt or error
-				$move = move_uploaded_file($_FILES['picfotoe']['tmp_name'], 'poster/'.$PosterName); //save image to the folder
-				}
-	
-		if (mysql_query("INSERT INTO event (nama_event, deskripsi_event, tanggal_event, tempat_event, catatan_tambahan_event, poster_event)
-			VALUES('$namae', '$deskripsi', '$tanggal', '$tempat', '$catatan', '$PosterName')"))
-			{
-			header("location: home.php");
-			}else{
-			echo "<script>alert('Upload Poster Gagal!');
-			javascript:history.go(-1);</script>";
+	@$catatan=$_POST ['catatan'];
+	if ((($_FILES["posterevent"]["type"] == "image/jpeg")|| ($_FILES["posterevent"]["type"] == "image/png"))) {
+		if($_FILES["posterevent"]["size"] > 5242880){
+			echo "<script>alert('Ukuran file terlalu besar!');
+			javascript:history.go(-1);</script>";}
+				if($_FILES["posterevent"]["error"] > 0) {
+					echo "<script>alert('File Poster Corrupt!');
+					javascript:history.go(-1);</script>";}
+					if (file_exists("poster_guest/" . $_FILES["posterevent"]["name"])) {
+						echo "<script>alert('Poster sudah pernah di upload!');
+						javascript:history.go(-1);</script>";}
+						
+			}else {
+				move_uploaded_file($_FILES["posterevent"]["tmp_name"], "poster_guest/" . $_FILES["posterevent"]["name"]);
+				$posterevent = "poster_guest/" . $_FILES["posterevent"]["name"];
 			}
+
+		if(mysql_query("INSERT INTO event (nama_event, deskripsi_event, tanggal_event, tempat_event, catatan_tambahan_event, poster_event)
+			VALUES('$namae', '$deskripsi', '$tanggal', '$tempat', '$catatan', '$PosterName')"));{
+			header("location: login.php");;
+		}
 ?>
