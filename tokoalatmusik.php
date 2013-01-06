@@ -1,3 +1,11 @@
+<?php
+session_start();
+if  (!isset($_SESSION['username'])){
+	header('location:loginforadmin.php');
+	exit;
+	}
+?>
+
 <html>
 <head>
 	<link type"text/css" rel="stylesheet" href="css/bootstrap.css"/>
@@ -5,7 +13,7 @@
 <style>
 body
 {
-background-image:url('music.jpg');
+background-image:url('musik2.jpg');
 background-repeat:no-repeat;
 background-attachment:fixed;
 background-position:bottom right;
@@ -29,8 +37,8 @@ font-size:1.1em;
 text-align:center;
 padding-top:5px;
 padding-bottom:4px;
-background-color:#A7C942;
-color:#ffffff;
+background-color:#B0E0E6;
+color:black;
 }
 #list tr.alt td 
 {
@@ -42,11 +50,10 @@ background-color:#EAF2D3;
 </head>
 <body>
 
-	    <div class="hero-unit">
-    <h1 style="color:white">HOS<img align="right" src="linux.jpg" alt="Smiley face" width="200" height="200"></h1> 
-    <p style="color:yellow">
-	House Of Surabaya Music
-	</p>
+    <img align="right" src="hos.jpg" width="270" height="300">
+	<div class="hero-unit">
+	<h1 style="color:khaki"><font face="impact">H O S</font></h1> 
+    <p style="color:LemonChiffon "><font face="matura mt script capitals" size="6"><strong>House Of Surabaya Music</strong></font></p>
 	</div>
 
 	
@@ -58,8 +65,8 @@ background-color:#EAF2D3;
     <li><a href="studiomusik.php">Studio Musik</a></li>
 	<li><a href="studiorecording.php">Studio Recording</a></li>
 	<li class="active"><a href="tokoalatmusik.php">Toko Alat Musik</a></li>
-	<li><a href="event.html">Upload Poster Event</a></li>
-    <li><a href="logout.php">Logout</a></li>
+	<li><a href="event.php">Upload Poster Event</a></li>
+    <li><a href="logout_admin.php">Logout</a></li>
     </ul>
 	</div>
 	</div>
@@ -73,6 +80,7 @@ background-color:#EAF2D3;
 <th align="center"><b>Telepon</b></th>
 <th align="center"><b>Available Time</b></th>
 <th align="center"><b>Catatan Tambahan</b></th>
+<th align="center"><b>Action</b></th>
 </tr>
 
 <?
@@ -98,12 +106,43 @@ while($data=mysql_fetch_row($hasil)){
 		<td>$data[4]</td>
 		<td>$data[5]</td>
 		<td>$data[6]</td>
+		<td><center><img src='del.jpg' width='40' height='40' onclick='del($data[0])' title='delete'></center></td>
 			
 		</tr>";
 }
 
 ?>
 </table>	
+</br>
+
+<!-- Footer-->
+	<footer class="footer">
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+ 	  <br>
+	  <br>
+	  <br>
+   	  <br>
+	  <br>
+	  <br>
+      <div class="span12">
+        <center>© 2012 House Of Surabaya Music. All rights reserved.</center>
+      </div>
+    </footer>
 </br><script src="js/bootstrap.js"></script>
+<script type="text/JavaScript">
+function del(id){
+var agree=confirm("Are you sure you want to delete this file?");
+if(agree==true){
+       window.location = 'delete_tam.php?id=' + id;
+}
+}
+</script>
 </body>
 </html>
