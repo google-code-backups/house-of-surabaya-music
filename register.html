@@ -9,37 +9,33 @@
 <style>
 body
 {
-background-image:url('music.jpg');
+background-image:url('musik2.jpg');
 background-repeat:no-repeat;
-background-attachment:fixed;
 background-position:bottom right;
 } 
 
 </style>
 
-
-    <div class="hero-unit">
-    <h1 style="color:white">HOS<img align="right" src="linux.jpg" alt="Smiley face" width="200" height="200"></h1> 
-    <p style="color:yellow">
-	House Of Surabaya Music
-	</p>
+    <img align="right" src="hos.jpg" width="270" height="300">
+	<div class="hero-unit">
+	<h1 style="color:khaki"><font face="impact">H O S</font></h1> 
+    <p style="color:LemonChiffon "><font face="matura mt script capitals" size="6"><strong>House Of Surabaya Music</strong></font></p>
 	</div>
 	
-	 <div class="navbar">
+	<div class="navbar navbar-inverse">
 	<div class="navbar-inner">
-	<a class="brand">HOS</a>
+	<a class="brand" href="login.php">HOS</a>
 	<ul class="nav">
-	<li><a href="home.php">Home</a></li>
-    <li><a href="studiomusik.php">Studio Musik</a></li>
-	<li><a href="studiorecording.php">Studio Recording</a></li>
-	<li><a href="tokoalatmusik.php">Toko Alat Musik</a></li>
-	<li><a href="event.html">Upload Poster Event</a></li>
+    <li><a href="studiomusikguest.php">Studio Musik</a></li>
+	<li><a href="studiorecordingguest.php">Studio Recording</a></li>
+	<li><a href="tokoalatmusikguest.php">Toko Alat Musik</a></li>
+	<li><a href="eventguest.php">Upload Poster Event</a></li>
     </ul>
 	</div>
 	</div>
 	
-<form class="well span5" method="post" action="register.php" enctype="multipart/form-data">
-		
+		<form class="well span5" method="post" action="register.php" enctype="multipart/form-data">
+		<center><h3><font face="cambria">REGISTER</font></h3></center>
 		<label><b>Nama Fasilitas</b></label>
 		<input type="text" class="span3" placeholder="Type Nama Fasilitas here..." name="nama_fasilitas" required="required"/><br/>
 		
@@ -48,8 +44,11 @@ background-position:bottom right;
 		
 		<label><b>Nomor KTP</b></label>
 		<input type="text" class="span3" placeholder="Type Nomor KTP here..." name="no_KTP" required="required"/><br/>
-	
-				
+		
+		<center><h4><font face="cambria">DATA UNTUK LOGIN</font></h4></center>
+		<label><b>Username</b></label>
+		<input type="text" class="span3" placeholder="Type Password here..." name="username" required="required"/><br/>
+		
 		<label><b>Password</b></label>
 		<input type="password" class="span3" placeholder="Type Password here..." name="password" required="required"/><br/>
 		
@@ -67,9 +66,31 @@ background-position:bottom right;
 		<input type="file" name="picfoto" accept="image/*">
 	
 		<br/>
+		<br/>
 		<button class="btn btn-primary" type="submit">Register</button>
 		<button class="btn" type="reset">Reset</button>
 	</form>
+	
+	<!-- Footer-->
+	<footer class="footer">
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+ 	  <br>
+	  <br>
+	  <br>
+   	  <br>
+	  <br>
+	  <br>
+      <div class="span12">
+        <center>© 2012 House Of Surabaya Music. All rights reserved.</center>
+      </div>
+    </footer>
 	
 <script> script src="js/bootstrap.js"></script>
 </body>
