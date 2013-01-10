@@ -18,7 +18,7 @@ if  (!isset($_SESSION['username'])){
     <p style="color:LemonChiffon "><font face="matura mt script capitals" size="6"><strong>House Of Surabaya Music</strong></font></p>
 	</div>
 	
-    <div class="navbar">
+    <div class="navbar navbar-inverse">
 	<div class="navbar-inner">
 	<a class="brand">HOS</a>
 	<ul class="nav">
@@ -31,12 +31,16 @@ if  (!isset($_SESSION['username'])){
     </ul>
 	</div>
 	</div>
+	
+					<form align="right" class="form-search pull-right" method="post" action="search-admin.php">
+				<input name="name" type="text" class="input-medium search-query" placeholder="Search for...">
+				<button type="submit" class="btn">Go</button>
+				</form></br>
 <style>
 body
 		{
 		background-image:url('musik2.jpg');
 		background-repeat:no-repeat;
-		background-attachment:fixed;
 		background-position:bottom right;
 		}
 
