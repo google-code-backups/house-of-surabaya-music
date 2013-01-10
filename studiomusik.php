@@ -9,20 +9,19 @@ if  (!isset($_SESSION['username'])){
 <html>
 <head>
 	<link type"text/css" rel="stylesheet" href="css/bootstrap.css"/>
-<title>member</title>
+<title>HOS</title>
 <style>
 body
 {
 background-image:url('musik2.jpg');
 background-repeat:no-repeat;
-background-attachment:fixed;
 background-position:bottom right;
 } 
 
 #list
 {
 font-family:"Cambria";
-width:70%;
+width:90%;
 border-collapse:collapse;
 }
 #list td, #list th 
@@ -56,7 +55,7 @@ background-color:#EAF2D3;
     <p style="color:LemonChiffon "><font face="matura mt script capitals" size="6"><strong>House Of Surabaya Music</strong></font></p>
 	</div>
 	
-    <div class="navbar">
+    <div class="navbar navbar-inverse">
 	<div class="navbar-inner">
 	<a class="brand">HOS</a>
 	<ul class="nav">
@@ -69,20 +68,43 @@ background-color:#EAF2D3;
     </ul>
 	</div>
 	</div>
+	
+	<div class="container-fluid">
+    <div class="row-fluid">
+	
+		<div class="span2">
+			<!--Sidebar content-->
+			<ul class="nav nav-list">
+			<li class="nav-header"><font face="cambria">WILAYAH</font></li>
+			<li class="active"><a href="studiomusik.php"><font face="cambria">Semua wilayah</font></a></li>
+			<li><a href="sm_admin_utara.php"><font face="cambria">Surabaya Utara</font></a></li>
+			<li><a href="sm_admin_barat.php"><font face="cambria">Surabaya Barat</font></a></li>
+			<li><a href="sm_admin_selatan.php"><font face="cambria">Surabaya Selatan</font></a></li>
+			<li><a href="sm_admin_timur.php"><font face="cambria">Surabaya Timur</font></a></li>
+			</ul>
+		</div>
+		
+    <div class="span10">
+    <!--Body content-->
+				<form align="right" class="form-search pull-right" method="post" action="search-admin.php">
+				<input name="name" type="text" class="input-medium search-query" placeholder="Search for...">
+				<button type="submit" class="btn">Go</button>
+				</form></br>
+	
 
-<center><hr><table border="1" width="100%" cellspacing="1" cellpadding="0" id="list">
+		<center><hr><table border="1" width="100%" cellspacing="1" cellpadding="0" id="list">
+		<center><h3><font face="cambria">DAFTAR STUDIO MUSIK SURABAYA</font></h3></center>
+			<tr class="alt">
+			<th align="center"><b>Nama</b></th>
+			<th align="center"><b>Alamat</b></th>
+			<th align="center"><b>Wilayah</b></th>
+			<th align="center"><b>Telepon</b></th>
+			<th align="center"><b>Available Time</b></th>
+			<th align="center"><b>Sewa Per Shift</b></th>
+			<th align="center"><b>Catatan Tambahan</b></th>
+			<th align="center"><b>Action</b></th>
 
-<tr class="alt">
-<th align="center"><b>Nama</b></th>
-<th align="center"><b>Alamat</b></th>
-<th align="center"><b>Wilayah</b></th>
-<th align="center"><b>Telepon</b></th>
-<th align="center"><b>Available Time</b></th>
-<th align="center"><b>Sewa Per Shift</b></th>
-<th align="center"><b>Catatan Tambahan</b></th>
-<th align="center"><b>Action</b></th>
-
-</tr>
+			</tr>
 
 <?
 mysql_connect("localhost","root","");
@@ -106,7 +128,9 @@ while($data=mysql_fetch_row($hasil)){
 }
 ?>
 </table>
-	
+	</div>
+	</div>
+	</div>
 <!-- Footer-->
 	<footer class="footer">
 	  <br>
