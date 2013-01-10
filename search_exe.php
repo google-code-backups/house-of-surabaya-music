@@ -5,9 +5,8 @@
 <style>
 body
 {
-background-image:url('music.jpg');
+background-image:url('musik2.jpg');
 background-repeat:no-repeat;
-background-attachment:fixed;
 background-position:bottom left;
 } 
 
@@ -41,14 +40,14 @@ background-color:#EAF2D3;
 </style>
 <body>
 </head>
-<div class="hero-unit">
-    <h1 style="color:white">HOS<img align="right" src="linux.jpg" alt="Smiley face" width="200" height="200"></h1> 
-    <p style="color:yellow">
-	House Of Surabaya Music
-	</p>
+	
+    <img align="right" src="hos.jpg" width="270" height="300">
+	<div class="hero-unit">
+	<h1 style="color:khaki"><font face="impact">H O S</font></h1> 
+    <p style="color:LemonChiffon "><font face="matura mt script capitals" size="6"><strong>House Of Surabaya Music</strong></font></p>
 	</div>
-			
-	 <div class="navbar">
+	
+	 <div class="navbar navbar-inverse">
 	<div class="navbar-inner">
 	<a class="brand" href="login.php">HOS</a>
 	<ul class="nav">
@@ -59,20 +58,21 @@ background-color:#EAF2D3;
     </ul>
 	</div>
 	</div>
-	
-		<form class="form-search pull-right" method="post" action="search_exe.php">
-		<input name="name" type="text" class="input-medium search-query">
-		<button type="submit" class="btn">Search</button>
+		
+		<form align="right" class="form-search pull-right" method="post" action="search_exe.php">
+		<input name="name" type="text" class="input-medium search-query" placeholder="Search for...">
+		<button type="submit" class="btn">Go</button>
 		</form></br>
-	
+
+		
 <center><hr><table border="1" width="100%" cellspacing="1" cellpadding="0" id="list">
-<center><h2>Hasil Pencarian</h2></center>
+<center><h2><font face="cambria">Hasil Pencarian</font></h2></center>
 <tr class="alt">
 <th align="center"><b>Nama</b></th>
 <th align="center"><b>Alamat</b></th>
 <th align="center"><b>Wilayah</b></th>
 <th align="center"><b>Telepon</b></th>
-<th align="center"><b>Available Time</b></th>
+<th align="center"><b>Jam Buka</b></th>
 <th align="center"><b>Sewa Per Shift</b></th>
 </tr>	
 
@@ -89,7 +89,7 @@ $resultq = mysql_query($q);
 $resultr = mysql_query($r);
 $resultt = mysql_query($t);   
 
-if($dataq=mysql_fetch_row($resultq)){
+		if($dataq=mysql_fetch_row($resultq)){
 		echo"<tr>
 		<td>$dataq[1]</td>
 		<td>$dataq[2]</td>
@@ -99,34 +99,32 @@ if($dataq=mysql_fetch_row($resultq)){
 		<td>$dataq[6]</td>
 		</tr>";
 		}
-
-	else if($datar=mysql_fetch_row($resultr)){
-		echo"<tr>
-		<td>$datar[1]</td>
-		<td>$datar[2]</td>
-		<td>$datar[3]</td>
-		<td>$datar[4]</td>
-		<td>$datar[5]</td>
-		<td>$datar[6]</td>
-		</tr>";
-		}
 		
-	else if($datat=mysql_fetch_row($resultt)){
-		echo"<tr>
-		<td>$datat[1]</td>
-		<td>$datat[2]</td>
-		<td>$datat[3]</td>
-		<td>$datat[4]</td>
-		<td>$datat[5]</td>
-		<td>$datat[6]</td>
-		</tr>";
-		}
-		
-	else{
-		echo "<script>alert('No result! !');
+			elseif($datar=mysql_fetch_row($resultr)){
+			echo"<tr>
+			<td>$datar[1]</td>
+			<td>$datar[2]</td>
+			<td>$datar[3]</td>
+			<td>$datar[4]</td>
+			<td>$datar[5]</td>
+			<td>$datar[6]</td>
+			</tr>";
+			}
+				
+				elseif($datat=mysql_fetch_row($resultt)){
+				echo"<tr>
+				<td>$datat[1]</td>
+				<td>$datat[2]</td>
+				<td>$datat[3]</td>
+				<td>$datat[4]</td>
+				<td>$datat[5]</td>
+				<td><center>-</center></td>
+				</tr>";
+				}
+		else {	
+			echo "<script>alert('Mohon maaf, data yang Anda cari tidak ditemukan');
 			javascript:history.go(-1);</script>";
 			}
-	
 ?>
 </table>
 
